@@ -129,3 +129,17 @@ test("data url", function(t) {
     t.end()
   })
 })
+
+test("get-pixels-buffer", function(t) {
+  var buffer = new Buffer("R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7",
+                          "base64")
+  getPixels(buffer, "image/gif", function(err, pixels) {
+    if(err) {
+      t.error(err, "failed to parse buffer")
+      t.end()
+      return
+    }
+    test_image(t, pixels)
+    t.end()
+  })
+})
