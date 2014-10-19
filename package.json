@@ -20,14 +20,14 @@
     "data-uri-to-buffer": "0.0.3"
   },
   "devDependencies": {
-    "beefy": "~2.1.1",
-    "brfs": "~1.2.0",
+    "tape": "^2.12.3",
+    "brfs": "^1.2.0",
     "browserify": "^3.44.0",
-    "tape": "^2.12.3"
+    "beefy": "^1.1.0"
   },
   "scripts": {
     "test": "tap test/*.js",
-    "test-browser": "beefy --open --cwd test test/test.js -- -t brfs"
+    "test-browser": "beefy --open --cwd test test.js -- -t brfs"
   },
   "repository": {
     "type": "git",
