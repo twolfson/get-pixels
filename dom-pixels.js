@@ -121,8 +121,8 @@ module.exports = function getPixels(url, type, cb) {
     break
     default:
       if(Buffer.isBuffer(url)) {
-        // TODO: Verify this is the proper string
-        defaultImage('data:' + type + ';base64,' + url.toString('base64'), cb)
+        var dataURI = 'data:' + type + ';base64,' + url.toString('base64')
+        defaultImage(dataURI, cb)
       } else if(url.indexOf('data:image/gif;') === 0) {
         dataGif(url, cb)
       } else {
