@@ -31,7 +31,7 @@ function test_image(t, img) {
   t.equals(img.get(0, 2, 0), 0)
   t.equals(img.get(0, 2, 1), 0)
   t.equals(img.get(0, 2, 2), 0xff)
-console.warn('waat');
+  
   for(var i=4; i<8; ++i) {
     for(var j=0; j<16; ++j) {
       t.equals(img.get(j, i, 0), 0xff)

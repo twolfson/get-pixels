@@ -109,16 +109,12 @@ function dataGif(url, cb) {
   })
 }
 
-
 module.exports = function getPixels(url, type, cb) {
-  // delete console.warn;
-console.warn('hai');
   if(!cb) {
     cb = type
     type = ''
   }
   var ext = path.extname(url)
-  console.error('wut', type);
   switch(type || ext.toUpperCase()) {
     case '.GIF':
       httpGif(url, cb)
