@@ -131,8 +131,8 @@ console.warn('waat');
 //   })
 // })
 
+var buffer = fs.readFileSync(path.join(__dirname, "test_pattern.png"));
 test("get-pixels-buffer", function(t) {
-  var buffer = fs.readFileSync(path.join(__dirname, "test_pattern.png"));
   getPixels(buffer, "image/png", function(err, pixels) {
     if(err) {
       t.error(err, "failed to parse buffer")
